@@ -3,14 +3,9 @@ import TemplateCard from '../components/TemplateCard';
 
 const templates = [
   {
-    name: "Virtual Network",
-    description: "Deploy a VNet with subnets.",
-    deployUrl: "https://portal.azure.com/#create/Microsoft.Template/uri/<raw-github-url>"
-  },
-  {
-    name: "Web App",
-    description: "Deploy an App Service with an App Plan.",
-    deployUrl: "https://portal.azure.com/#create/Microsoft.Template/uri/<raw-github-url>"
+    name: "Test Resource Group",
+    description: "Deploy a test resource group in Azure.",
+    deployUrl: "https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/nate8523/AzureDeployHub/refs/heads/main/deployment-templates/dummy/test-template.json"
   }
 ];
 
