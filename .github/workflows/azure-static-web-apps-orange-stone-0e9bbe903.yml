@@ -37,7 +37,9 @@ jobs:
 
       # Step 4: Disable Next.js Telemetry
       - name: Disable Next.js Telemetry
-        run: npx next telemetry disable --prefix web-app
+        run: |
+          cd web-app
+          npx next telemetry disable
 
       # Step 5: Install dependencies
       - name: Install Dependencies
