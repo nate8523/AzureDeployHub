@@ -5,7 +5,7 @@ const templates = [
   {
     name: "Test Resource Group",
     description: "Deploy a test resource group in Azure.",
-    deployUrl: "https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/nate8523/AzureDeployHub/refs/heads/main/deployment-templates/dummy/test-template.json"
+    deployUrl: "https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/nate8523/AzureDeployHub/main/deployment-templates/dummy/test-template.json"
   }
 ];
 
