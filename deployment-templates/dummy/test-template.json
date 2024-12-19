@@ -1,12 +1,28 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2024-11-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-10-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "uksouth",
+      "metadata": {
+        "description": "Location for the resource group"
+      }
+    },
+    "resourceGroupName": {
+      "type": "string",
+      "defaultValue": "TestResourceGroup",
+      "metadata": {
+        "description": "Name of the resource group to create"
+      }
+    }
+  },
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
       "apiVersion": "2021-04-01",
-      "location": "uksouth",
-      "name": "TestResourceGroup"
+      "name": "[parameters('resourceGroupName')]",
+      "location": "[parameters('location')]"
     }
   ]
 }
