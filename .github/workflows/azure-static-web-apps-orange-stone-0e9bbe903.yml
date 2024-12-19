@@ -22,29 +22,38 @@ jobs:
           submodules: true
           lfs: false
 
-      # Step 2: Clean the output directory
+      # Step 2: Cache Node.js modules
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Step 3: Clean the output directory
       - name: Clean Output Directory
         run: rm -rf web-app/out
 
-      # Step 3: Install dependencies (Bootstrap is included here)
+      # Step 4: Install dependencies
       - name: Install Dependencies
         run: npm install --prefix web-app
 
-      # Step 4: Run linting (optional but recommended)
+      # Step 5: Run linting (optional but recommended)
       - name: Run Lint
         run: npm run lint --prefix web-app
 
-      # Step 5: Build the web app
+      # Step 6: Build the web app
       - name: Build Web App
         run: npm run build --prefix web-app
 
-      # Step 6: Debug output directory (optional for troubleshooting)
+      # Step 7: Debug output directory (optional for troubleshooting)
       - name: Debug Output Directory
         run: |
           echo "Contents of output directory:"
           ls -al web-app/out
 
-      # Step 7: Deploy to Azure Static Web App
+      # Step 8: Deploy to Azure Static Web App
       - name: Deploy to Azure
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
