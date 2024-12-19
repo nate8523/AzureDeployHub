@@ -40,4 +40,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "web-app"        # Path to the web app source code
-          output_location: ""            # Removed explicit location to let Azure handle the output
+          output_location: "out"            # Removed explicit location to let Azure handle the output
