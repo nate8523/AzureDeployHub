@@ -27,21 +27,21 @@ jobs:
       - name: Build Web App
         run: npm run build --prefix web-app
 
-      - name: Ensure Output Folder Exists
-        run: mkdir -p web-app/out
+      - name: Debug Output Directory
+        run: |
+          echo "Debugging output directory..."
+          ls -al web-app/out || echo "Output directory does not exist."
 
       - name: Deploy to Azure
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_STONE_0E9BBE903 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (e.g., PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          app_location: "web-app/"        # App source code path
+          app_location: "web-app/"        # Path to the web app source code
           api_location: ""                # API source code path (optional)
           output_location: "web-app/out"  # Built app content directory
-          ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
