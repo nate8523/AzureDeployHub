@@ -28,9 +28,12 @@ jobs:
         run: npm run build --prefix web-app
 
       - name: Debug Output Directory
+        run: ls -al web-app/out
+
+      - name: Flatten Output Directory
         run: |
-          echo "Debugging output directory..."
-          ls -al web-app/out || echo "Output directory does not exist."
+          mv web-app/out/* web-app/
+          rm -rf web-app/out
 
       - name: Deploy to Azure
         id: builddeploy
@@ -39,18 +42,6 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_STONE_0E9BBE903 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "web-app/"        # Path to the web app source code
-          api_location: ""                # API source code path (optional)
-          output_location: "web-app/out"  # Built app content directory
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_STONE_0E9BBE903 }}
-          action: "close"
+          app_location: "web-app"        # Updated to point to the flattened directory
+          api_location: ""               # API source code path (optional)
+          output_location: "web-app"     # Matches the flattened structure
