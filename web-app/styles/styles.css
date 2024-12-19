@@ -1,0 +1,85 @@
+/* Root Variables */
+:root {
+    --primary-color: #121212; /* Midnight Blue */
+    --secondary-color: #1E1E1E; /* Cool Gray */
+    --accent-color: #00FFFF; /* Bright Cyan */
+    --text-color: #E0E0E0; /* Light Gray */
+    --background-color: #000000; /* Black */
+}
+
+/* Base Styles */
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+header p {
+    font-size: 1.25rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: var(--text-color);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary-color);
+}
+
+.card button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+
+/* Footer or Other Elements */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px;
+    text-align: center;
+    border-top: 2px solid var(--secondary-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-color);
+}
