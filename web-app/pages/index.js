@@ -1,6 +1,6 @@
 import React from 'react';
 import TemplateCard from '../components/TemplateCard';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css'; // Import the new CSS file for the dark theme
 
 const templates = [
   {
@@ -14,22 +14,24 @@ const templates = [
 export default function Home() {
   return (
     <div className="container">
-      <header className="text-center my-5">
+      <header className="text-center py-5">
         <h1>AzureDeployHub</h1>
-        <p>One-click deployment templates for Azure</p>
+        <p>Your one-stop shop for Azure deployments</p>
       </header>
       
-      <div className="row">
-        {templates.map((template) => (
-          <div className="col-md-4" key={template.name}>
-            <TemplateCard
-              name={template.name}
-              description={template.description}
-              deployUrl={template.deployUrl}
-            />
-          </div>
-        ))}
-      </div>
+      <main>
+        <div className="row">
+          {templates.map((template) => (
+            <div className="col-md-4 mb-4" key={template.name}>
+              <TemplateCard
+                name={template.name}
+                description={template.description}
+                deployUrl={template.deployUrl}
+              />
+            </div>
+          ))}
+        </div>
+      </main>
     </div>
   );
 }
