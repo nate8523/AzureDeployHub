@@ -1,6 +1,6 @@
 import React from 'react';
 import TemplateCard from '../components/TemplateCard';
-import './styles.css'; // Import the new CSS file for the dark theme
+import '../styles/styles.css'; // Import the new CSS file for the dark theme
 
 const templates = [
   {
