@@ -35,25 +35,29 @@ jobs:
       - name: Clean Output Directory
         run: rm -rf web-app/out
 
-      # Step 4: Install dependencies
+      # Step 4: Disable Next.js Telemetry
+      - name: Disable Next.js Telemetry
+        run: npx next telemetry disable --prefix web-app
+
+      # Step 5: Install dependencies
       - name: Install Dependencies
         run: npm install --prefix web-app
 
-      # Step 5: Run linting (optional but recommended)
+      # Step 6: Run linting (optional but recommended)
       - name: Run Lint
         run: npm run lint --prefix web-app
 
-      # Step 6: Build the web app
+      # Step 7: Build the web app
       - name: Build Web App
         run: npm run build --prefix web-app
 
-      # Step 7: Debug output directory (optional for troubleshooting)
+      # Step 8: Debug output directory (optional for troubleshooting)
       - name: Debug Output Directory
         run: |
           echo "Contents of output directory:"
           ls -al web-app/out
 
-      # Step 8: Deploy to Azure Static Web App
+      # Step 9: Deploy to Azure Static Web App
       - name: Deploy to Azure
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
