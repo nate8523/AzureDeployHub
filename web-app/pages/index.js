@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TemplateCard from '../components/TemplateCard';
 
 const templates = [
@@ -10,8 +10,11 @@ const templates = [
 ];
 
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
   const toggleTheme = () => {
     document.body.classList.toggle('light-mode');
+    setIsDarkMode(!isDarkMode);
   };
 
   return (
@@ -21,7 +24,9 @@ export default function Home() {
           <h1>AzureDeployHub</h1>
           <p>One-click deployment templates for Azure</p>
         </div>
-        <button onClick={toggleTheme}>Toggle Theme</button>
+        <button onClick={toggleTheme}>
+          {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
       </header>
       <main>
         <div className="container">
@@ -39,7 +44,7 @@ export default function Home() {
         </div>
       </main>
       <footer>
-        © 2024 AzureDeployHub - All Rights Reserved.
+        © Nathan Carroll 2024 AzureDeployHub - All Rights Reserved.
       </footer>
     </>
   );
