@@ -2,7 +2,7 @@
 .page-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the height spans the full viewport */
+    min-height: 100vh; /* height spans the full viewport */
 }
 
 /* Header */
