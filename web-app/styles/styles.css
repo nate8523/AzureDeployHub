@@ -1,4 +1,4 @@
-/* Root Variables for Dark Mode (Default Theme) */
+/* Root Variables */
 :root {
     --primary-color: #002050; /* Azure Dark Blue */
     --secondary-color: #003566; /* Deep Cool Blue */
@@ -7,17 +7,6 @@
     --background-color: #001122; /* Midnight Black */
     --card-hover-color: #004080; /* Card Hover Blue */
     --border-color: #004D99; /* Subtle Border Blue */
-}
-
-/* Root Variables for Light Mode */
-body.light-mode {
-    --primary-color: #FFFFFF;
-    --secondary-color: #F0F0F0;
-    --accent-color: #007FFF;
-    --text-color: #333333;
-    --background-color: #FFFFFF;
-    --card-hover-color: #E0E0E0;
-    --border-color: #CCCCCC;
 }
 
 /* Base Styles */
@@ -80,15 +69,10 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.container {
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Card Styles */
@@ -136,7 +120,7 @@ footer {
     text-align: center;
     border-top: 2px solid var(--border-color);
     font-size: 0.9rem;
-    margin-top: auto;
+    margin-top: auto; /* Push footer to the bottom */
 }
 
 /* Links */
@@ -150,7 +134,7 @@ a:hover {
     color: var(--text-color);
 }
 
-/* Utility Classes */
+/* Responsive Layout */
 .row {
     display: flex;
     flex-wrap: wrap;
