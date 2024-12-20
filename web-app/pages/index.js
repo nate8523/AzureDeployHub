@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TemplateCard from '../components/TemplateCard';
 
 const templates = [
@@ -12,10 +12,11 @@ const templates = [
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const toggleTheme = () => {
-    document.body.classList.toggle('light-mode');
-    setIsDarkMode(!isDarkMode);
-  };
+  useEffect(() => {
+    document.body.classList.toggle('light-mode', !isDarkMode);
+  }, [isDarkMode]);
+
+  const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
     <div className="page-container">
