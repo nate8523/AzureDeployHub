@@ -29,22 +29,14 @@ export default function Home() {
         </button>
       </header>
       <main>
-        <div className="container">
-          <div className="row">
-            {templates.map((template) => (
-              <div className="col-md-4" key={template.name}>
-                <TemplateCard
-                  name={template.name}
-                  description={template.description}
-                  deployUrl={template.deployUrl}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <TemplateCard
+          name={templates[0].name}
+          description={templates[0].description}
+          deployUrl={templates[0].deployUrl}
+        />
       </main>
       <footer>
-        © Nathan Carroll 2024 AzureDeployHub - All Rights Reserved.
+        © 2024 AzureDeployHub - All Rights Reserved.
       </footer>
     </>
   );
