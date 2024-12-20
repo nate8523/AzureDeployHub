@@ -39,7 +39,8 @@ export default function Home() {
         </div>
       </main>
       <footer>
-        © Nathan Carroll 2024 AzureDeployHub - All Rights Reserved.
+        © 2024 AzureDeployHub - All Rights Reserved.
       </footer>
     </>
   );
+}
