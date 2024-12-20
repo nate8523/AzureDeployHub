@@ -9,8 +9,12 @@ export default function TemplateCard({ name, description, deployUrl }) {
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{description}</p>
-        <a href={deployUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-          Deploy to Azure
+        <a href={deployUrl} target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://aka.ms/deploytoazurebutton"
+            alt="Deploy to Azure"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
         </a>
       </div>
     </div>
