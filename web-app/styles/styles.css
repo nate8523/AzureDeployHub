@@ -1,4 +1,4 @@
-/* Root Variables */
+/* Root Variables for Dark Mode (Default Theme) */
 :root {
     --primary-color: #002050; /* Azure Dark Blue */
     --secondary-color: #003566; /* Deep Cool Blue */
@@ -9,6 +9,18 @@
     --border-color: #004D99; /* Subtle Border Blue */
 }
 
+/* Root Variables for Light Mode */
+body.light-mode {
+    --primary-color: #FFFFFF;
+    --secondary-color: #F0F0F0;
+    --accent-color: #007FFF;
+    --text-color: #333333;
+    --background-color: #FFFFFF;
+    --card-hover-color: #E0E0E0;
+    --border-color: #CCCCCC;
+}
+
+/* Base Styles */
 body {
     color: var(--text-color);
     background: linear-gradient(180deg, var(--background-color) 0%, #002850 100%);
@@ -136,4 +148,32 @@ a {
 
 a:hover {
     color: var(--text-color);
+}
+
+/* Utility Classes */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.col-md-4 {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .col-md-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
