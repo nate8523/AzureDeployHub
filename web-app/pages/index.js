@@ -15,28 +15,31 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <>
       <header>
-        <h1>AzureDeployHub</h1>
-        <p>One-click deployment templates for Azure</p>
+        <div>
+          <h1>AzureDeployHub</h1>
+          <p>One-click deployment templates for Azure</p>
+        </div>
         <button onClick={toggleTheme}>Toggle Theme</button>
       </header>
       <main>
-        <div className="row">
-          {templates.map((template) => (
-            <div className="col-md-4" key={template.name}>
-              <TemplateCard
-                name={template.name}
-                description={template.description}
-                deployUrl={template.deployUrl}
-              />
-            </div>
-          ))}
+        <div className="container">
+          <div className="row">
+            {templates.map((template) => (
+              <div className="col-md-4" key={template.name}>
+                <TemplateCard
+                  name={template.name}
+                  description={template.description}
+                  deployUrl={template.deployUrl}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </main>
       <footer>
-        © 2024 AzureDeployHub - All Rights Reserved.
+        © Nathan Carroll 2024 AzureDeployHub - All Rights Reserved.
       </footer>
-    </div>
+    </>
   );
-}
