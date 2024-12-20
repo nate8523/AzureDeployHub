@@ -37,3 +37,37 @@ footer {
     text-align: center;
     border-top: 2px solid var(--border-color);
 }
+
+/* Root Variables (Default: Dark Mode) */
+:root {
+    --primary-color: #002050; /* Azure Dark Blue */
+    --secondary-color: #003566; /* Deep Cool Blue */
+    --accent-color: #007FFF; /* Bright Azure Blue */
+    --text-color: #F5F5F5; /* Light Gray */
+    --background-color: #001122; /* Midnight Black */
+    --card-hover-color: #004080; /* Card Hover Blue */
+    --border-color: #004D99; /* Subtle Border Blue */
+}
+
+/* Light Mode Variables */
+body.light-mode {
+    --primary-color: #FFFFFF; /* White */
+    --secondary-color: #F0F0F0; /* Light Gray */
+    --accent-color: #007FFF; /* Bright Azure Blue */
+    --text-color: #333333; /* Dark Gray */
+    --background-color: #FFFFFF; /* White */
+    --card-hover-color: #E0E0E0; /* Light Hover Gray */
+    --border-color: #CCCCCC; /* Light Border Gray */
+}
+
+/* Base Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
