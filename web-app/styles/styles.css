@@ -1,4 +1,4 @@
-/* Root Variables */
+/* Root Variables for Dark Mode (Default Theme) */
 :root {
     --primary-color: #002050; /* Azure Dark Blue */
     --secondary-color: #003566; /* Deep Cool Blue */
@@ -9,11 +9,21 @@
     --border-color: #004D99; /* Subtle Border Blue */
 }
 
+/* Root Variables for Light Mode */
+body.light-mode {
+    --primary-color: #FFFFFF;
+    --secondary-color: #F0F0F0;
+    --accent-color: #007FFF;
+    --text-color: #333333;
+    --background-color: #FFFFFF;
+    --card-hover-color: #E0E0E0;
+    --border-color: #CCCCCC;
+}
+
 /* Base Styles */
 body {
     color: var(--text-color);
-    background: linear-gradient(180deg, var(--background-color) 0%, #002850 100%);
-    background-attachment: fixed;
+    background: var(--background-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     display: flex;
@@ -23,7 +33,7 @@ body {
 
 /* Header Styles */
 header {
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--text-color);
     padding: 20px;
     display: flex;
@@ -85,7 +95,7 @@ main {
     color: var(--text-color);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    margin-bottom: 20px;
+    width: 300px;
 }
 
 .card:hover {
@@ -120,44 +130,13 @@ footer {
     text-align: center;
     border-top: 2px solid var(--border-color);
     font-size: 0.9rem;
-    margin-top: auto; /* Push footer to the bottom */
-}
-
-/* Links */
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--text-color);
+    margin-top: auto;
+    width: 100%;
 }
 
 /* Responsive Layout */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.col-md-4 {
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
-    box-sizing: border-box;
-}
-
 @media (max-width: 768px) {
-    .col-md-4 {
-        flex: 1 1 calc(50% - 20px);
-        max-width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
-    .col-md-4 {
-        flex: 1 1 100%;
-        max-width: 100%;
+    .card {
+        width: 100%;
     }
 }
