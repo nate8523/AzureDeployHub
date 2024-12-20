@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="page-container">
       <header>
         <div>
           <h1>AzureDeployHub</h1>
@@ -38,6 +38,6 @@ export default function Home() {
       <footer>
         © 2024 AzureDeployHub - All Rights Reserved.
       </footer>
-    </>
+    </div>
   );
 }
