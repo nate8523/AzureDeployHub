@@ -1,6 +1,5 @@
 import React from 'react';
 import TemplateCard from '../components/TemplateCard';
-import '../styles/styles.css';
 
 const templates = [
   {
