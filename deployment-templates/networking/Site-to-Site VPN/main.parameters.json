@@ -1,0 +1,91 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "tags": {
+            "value": {
+                "Environment": "Development",
+                "Owner": "Network Team"
+            }
+        },
+        "deploymentPrefix": {
+            "value": "Demo"
+        },
+        "deploymentInstance": {
+            "value": "01"
+        },
+        "deploymentType": {
+            "value": "dev"
+        },
+        "location": {
+            "value": "uk south"
+        },
+        "locationShort": {
+            "value": "uks"
+        },
+        "virtualNetworkAddressRange": {
+            "value": "10.0.0.0/16"
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "GatewaySubnet",
+                    "addressPrefix": "10.0.0.0/29",
+                    "networkSecurityGroup": null
+                },
+                {
+                    "name": "DataSubnet",
+                    "addressPrefix": "10.0.1.0/24",
+                    "networkSecurityGroup": "protected"
+                }
+            ]
+        },
+        "DNSServerAddress": {
+            "value": [
+                
+            ]
+        },
+        "securityRules": {
+            "value": [
+                {
+                    "name": "AllowRDP",
+                    "priority": 100,
+                    "direction": "Inbound",
+                    "access": "Allow",
+                    "protocol": "Tcp",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "22",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*"
+                }
+            ]
+        },
+        "publicIpsku": {
+            "value": "Basic"
+        },
+        "publicIPAllocationMethod": {
+            "value": "Dynamic"
+        },
+        "gatewaySku": {
+            "value": "Basic"
+        },
+        "gatewayType": {
+            "value": "Vpn"
+        },
+        "vpnType": {
+            "value": "RouteBased"
+        },
+        "localGatewayIpAddress": {
+            "value": "11.22.33.44"
+        },
+        "localAddressPrefixes": {
+            "value": [
+                "192.168.0.0/24"
+            ]
+        },
+        "enableBgp": {
+            "value": false
+        }
+
+    }
+}
