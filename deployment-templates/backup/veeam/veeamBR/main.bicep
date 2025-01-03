@@ -47,7 +47,7 @@ param storageAccountKind string
 param storageTLSversion string
 
 @description('The name of the virtual machine.')
-param virtualMachineName string
+var virtualMachineName = '${deploymentPrefix}-vm-${deploymentType}-${deploymentInstance}'
 
 @description('The size of the virtual machine (e.g., "Standard_B2s").')
 param virtualMachineSize string
