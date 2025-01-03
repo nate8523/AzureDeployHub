@@ -106,7 +106,7 @@
             "value": "veeam-backup-replication-v12"
         },
         "imageVersion": {
-            "value": "latest"
+            "value": "12.2.03345"
         },
         "nicDeleteOption": {
             "value": "Detach"
