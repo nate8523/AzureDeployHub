@@ -1,0 +1,127 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "tags": {
+            "value": {
+                "Environment": "Development",
+                "Owner": "Network Team"
+            }
+        },
+        "deploymentPrefix": {
+            "value": "Demo"
+        },
+        "deploymentInstance": {
+            "value": "01"
+        },
+        "deploymentType": {
+            "value": "dev"
+        },
+        "location": {
+            "value": "uk south"
+        },
+        "locationShort": {
+            "value": "uks"
+        },
+        "virtualNetworkAddressRange": {
+            "value": "10.0.0.0/16"
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "DataSubnet",
+                    "addressPrefix": "10.0.1.0/24",
+                    "networkSecurityGroup": "protected"
+                }
+            ]
+        },
+        "DNSServerAddress": {
+            "value": [
+                
+            ]
+        },
+        "securityRules": {
+            "value": [
+                {
+                    "name": "cloud-connect",
+                    "priority": 1010,
+                    "direction": "Inbound",
+                    "access": "Allow",
+                    "protocol": "Tcp",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "6180",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*"
+                },
+                {
+                    "name": "allow-rdp",
+                    "priority": 1020,
+                    "direction": "Inbound",
+                    "access": "Allow",
+                    "protocol": "Tcp",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "3389",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*"
+                }
+            ]
+        },
+        "publicIpsku": {
+            "value": "Basic"
+        },
+        "publicIPAllocationMethod": {
+            "value": "Dynamic"
+        },
+        "publicIpDeleteOption": {
+            "value": "Delete"
+        },
+        "storageAccountSKU": {
+            "value": "Standard_LRS"
+        },
+        "storageAccountKind": {
+            "value": "StorageV2"
+        },
+        "storageTLSversion": {
+            "value": "TLS1_2"
+        },
+        "virtualMachineName": {
+            "value": "vm01"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1ms"
+        },
+        "osDiskType": {
+            "value": "Standard_LRS"
+        },
+        "osDiskDeleteOption": {
+            "value": "Delete"
+        },
+        "imagePublisher": {
+            "value": "veeam"
+        },
+        "imageOffer": {
+            "value": "veeam-backup-replication"
+        },
+        "imageSKU": {
+            "value": "veeam-backup-replication-v12"
+        },
+        "imageVersion": {
+            "value": "latest"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
+        },
+        "enableHotpatching": {
+            "value": false
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        },
+        "adminUsername": {
+            "value": "azureuser"
+        },
+        "adminPassword": {
+            "value": "ReallySecurePassword1"
+        }
+    }
+}
