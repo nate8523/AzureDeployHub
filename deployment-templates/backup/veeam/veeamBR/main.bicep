@@ -139,6 +139,7 @@ module vnet 'modules/vnet.bicep' = {
     DNSServerAddress: DNSServerAddress
     nsgName: nsgName
   }
+  dependsOn: [nsg]
 }
 
 module publicIp 'modules/publicIp.bicep' = {
