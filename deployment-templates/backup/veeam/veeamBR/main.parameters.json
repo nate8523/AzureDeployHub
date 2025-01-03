@@ -9,7 +9,7 @@
             }
         },
         "deploymentPrefix": {
-            "value": "Demo"
+            "value": "Veeam"
         },
         "deploymentInstance": {
             "value": "01"
@@ -83,9 +83,6 @@
         },
         "storageTLSversion": {
             "value": "TLS1_2"
-        },
-        "virtualMachineName": {
-            "value": "vm01"
         },
         "virtualMachineSize": {
             "value": "Standard_B1ms"
