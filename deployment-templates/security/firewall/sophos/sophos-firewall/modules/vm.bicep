@@ -42,7 +42,10 @@ param networkInterfaceIds array
 @description('The resource ID of the Availability Set.')
 param availabilitySetId string
 
+@description('The name of the OS disk.')
 param osDiskName string
+
+@description('The name of the data disk.')
 param dataDiskName string
 
 resource virtualMachine 'Microsoft.Compute/virtualMachines@2024-07-01' = {
@@ -61,23 +64,23 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2024-07-01' = {
     hardwareProfile: {
       vmSize: virtualMachineSize
     }
-  osProfile: {
-    computerName: virtualMachineName
-    adminUsername: adminUsername
-    adminPassword: adminPassword
+    osProfile: {
+      computerName: virtualMachineName
+      adminUsername: adminUsername
+      adminPassword: adminPassword
     }
-  diagnosticsProfile: {
-    bootDiagnostics: {
-      enabled: true
-      storageUri: storageUri
+    diagnosticsProfile: {
+      bootDiagnostics: {
+        enabled: true
+        storageUri: storageUri
       }
     }
-  storageProfile: {
-    imageReference: {
-      publisher: imagePublisher
-      offer: imageOffer
-      sku: imageSKU
-      version: imageVersion
+    storageProfile: {
+      imageReference: {
+        publisher: imagePublisher
+        offer: imageOffer
+        sku: imageSKU
+        version: imageVersion
       }
       osDisk: {
         createOption: 'FromImage'
@@ -96,20 +99,20 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2024-07-01' = {
           }
         }
       ]
-      }
+    }
     networkProfile: {
-      networkInterfaces: [ for nicId in networkInterfaceIds: {
+      networkInterfaces: [
+        for nicId in networkInterfaceIds: {
           id: nicId.id
           properties: {
             deleteOption: nicDeleteOption
             primary: nicId.primary
           }
-        }]
+        }
+      ]
     }
     availabilitySet: {
       id: availabilitySetId
     }
-    
-    
   }
 }

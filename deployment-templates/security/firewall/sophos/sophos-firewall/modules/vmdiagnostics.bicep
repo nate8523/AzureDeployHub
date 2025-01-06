@@ -8,18 +8,31 @@ param location string
 param tags object
 
 @description('The SKU for the storage account.')
-@allowed(['Standard_LRS', 'Standard_GRS', 'Standard_ZRS', 'Premium_LRS'])
+@allowed([
+  'Standard_LRS' 
+  'Standard_GRS'
+  'Standard_ZRS'
+  'Premium_LRS'
+])
 param storageAccountSKU string
 
 @description('The kind of the storage account.')
-@allowed(['StorageV2', 'Storage', 'BlobStorage'])
+@allowed([
+  'StorageV2'
+  'Storage'
+  'BlobStorage'
+])
 param storageAccountKind string
 
 @description('The minimum TLS version for the storage account.')
-@allowed(['TLS1_0', 'TLS1_1', 'TLS1_2'])
+@allowed([
+  'TLS1_0'
+  'TLS1_1'
+  'TLS1_2'
+])
 param storageTLSversion string
 
-resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
   name: storageAccountName
   location: location
   tags: tags

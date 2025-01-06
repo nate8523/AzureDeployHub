@@ -4,7 +4,7 @@ param publicIpName string
 @description('The location of the Public IP Address.')
 param location string
 
-@description('Tags to be applied to the virtual network.')
+@description('Tags to be applied to the Public IP Address.')
 param tags object = {}
 
 @description('The SKU for the Public IP Address.')
@@ -15,10 +15,10 @@ param publicIpsku string
 @allowed(['Static', 'Dynamic'])
 param publicIPAllocationMethod string
 
-resource publicIp 'Microsoft.Network/publicIPAddresses@2020-11-01' = {
+resource publicIp 'Microsoft.Network/publicIPAddresses@2024-05-01' = {
   name: toLower(publicIpName)
-  tags: tags
   location: location
+  tags: tags
   sku: {
     name: publicIpsku
   }
