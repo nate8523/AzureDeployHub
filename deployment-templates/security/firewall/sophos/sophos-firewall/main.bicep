@@ -1,9 +1,5 @@
-// params
-//vmname
-//password
-//licence type, byol/payg
 //domain name //.uksouth.cloudapp.azure.com
-//storage account
+// version 1.0.0
 
 @description('The Azure region where the resources will be deployed.')
 param location string

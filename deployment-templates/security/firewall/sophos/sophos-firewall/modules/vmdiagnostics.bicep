@@ -1,3 +1,5 @@
+// version 1.0.0
+
 @description('The name of the storage account for VM diagnostics.')
 param storageAccountName string
 

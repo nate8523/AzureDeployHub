@@ -1,3 +1,5 @@
+// version 1.0.0
+
 @description('The name of the Network Security Group.')
 param nsgName string
 

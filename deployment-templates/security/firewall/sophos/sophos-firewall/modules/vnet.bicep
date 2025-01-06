@@ -1,3 +1,5 @@
+// version 1.0.0
+
 @description('Name of the virtual network.')
 param virtualNetworkName string
 

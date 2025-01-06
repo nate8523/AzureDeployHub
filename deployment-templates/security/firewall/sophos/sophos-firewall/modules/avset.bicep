@@ -1,3 +1,5 @@
+// version 1.0.0
+
 @description('The Azure region where the Availability Set will be deployed.')
 param location string
 

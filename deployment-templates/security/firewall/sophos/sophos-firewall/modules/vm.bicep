@@ -1,3 +1,5 @@
+// version 1.0.0
+
 @description('The name of the Virtual Machine.')
 param virtualMachineName string
 

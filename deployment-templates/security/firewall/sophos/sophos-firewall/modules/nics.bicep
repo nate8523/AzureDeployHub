@@ -1,3 +1,5 @@
+// version 1.0.0
+
 @description('Location for the resources.')
 param location string
 
