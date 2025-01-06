@@ -1,0 +1,139 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "tags": {
+            "value": {
+                "Environment": "Development",
+                "Owner": "Network Team"
+            }
+        },
+        "deploymentPrefix": {
+            "value": "Sophos"
+        },
+        "deploymentInstance": {
+            "value": "01"
+        },
+        "deploymentType": {
+            "value": "dev"
+        },
+        "location": {
+            "value": "uk south"
+        },
+        "locationShort": {
+            "value": "uks"
+        },
+        "virtualNetworkAddressRange": {
+            "value": "10.0.0.0/16"
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "WAN",
+                    "addressPrefix": "10.0.1.0/24",
+                    "networkSecurityGroup": ""
+                },
+                {
+                    "name": "LAN",
+                    "addressPrefix": "10.0.0.0/24",
+                    "networkSecurityGroup": ""
+                }
+            ]
+        },
+        "DNSServerAddress": {
+            "value": [
+                
+            ]
+        },
+        "securityRules": {
+            "value": [
+                {
+                    "name": "allow-webui",
+                    "priority": 1010,
+                    "direction": "Inbound",
+                    "access": "Allow",
+                    "protocol": "Tcp",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "4444",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*"
+                },
+                {
+                    "name": "allow-ssh",
+                    "priority": 1020,
+                    "direction": "Inbound",
+                    "access": "Allow",
+                    "protocol": "Tcp",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "22",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*"
+                }
+            ]
+        },
+        "publicIpsku": {
+            "value": "Basic"
+        },
+        "publicIPAllocationMethod": {
+            "value": "Static"
+        },
+        "networkInterfaces": {
+            "value": [
+                {
+                    "networkInterfaceName": "Port-A",
+                    "subnetName": "LAN",
+                    "primary": false
+                },
+                {
+                    "networkInterfaceName": "Port-B",
+                    "subnetName": "WAN",
+                    "primary": true
+                }
+            ]
+        },
+        "faultDomains": {
+            "value": 2
+        },
+        "updateDomains": {
+            "value": 5
+        },
+        "avSetSKU": {
+            "value": "Aligned"
+        },
+        "storageAccountSKU": {
+            "value": "Standard_LRS"
+        },
+        "storageAccountKind": {
+            "value": "StorageV2"
+        },
+        "storageTLSversion": {
+            "value": "TLS1_2"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_F2s_v2"
+        },
+        "imagePublisher": {
+            "value": "sophos"
+        },
+        "imageOffer": {
+            "value": "sophos-xg"
+        },
+        "imageSKU": {
+            "value": "byol"
+        },
+        "imageVersion": {
+            "value": "latest"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
+        },
+        "adminUsername": {
+            "value": "azureuser"
+        },
+        "adminPassword": {
+            "value": "ReallySecurePassword1"
+        }
+    }
+}
+
+
