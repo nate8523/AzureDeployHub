@@ -207,12 +207,10 @@ module vm 'modules/vm.bicep' = {
     imageVersion: imageVersion
     osDiskName: osDiskName
     dataDiskName: dataDiskName
-    networkInterfaceIds: [
-      for nic in networkInterfaces: {
-        id: resourceId('Microsoft.Network/networkInterfaces', toLower('${deploymentPrefix}-nic-${deploymentType}-${locationShort}-${nic.networkInterfaceName}'))
-        primary: nic.primary
-      }
-    ]
+    networkInterfaceIds: [for nic in networkInterfaces: {
+      id: resourceId('Microsoft.Network/networkInterfaces', toLower('${deploymentPrefix}-nic-${deploymentType}-${locationShort}-${nic.networkInterfaceName}'))  //fix this :)
+      primary: nic.primary
+  }]
     nicDeleteOption: nicDeleteOption
     storageUri: vmdiagnostics.outputs.primaryBlobEndpoint
     availabilitySetId: avset.outputs.avsetId

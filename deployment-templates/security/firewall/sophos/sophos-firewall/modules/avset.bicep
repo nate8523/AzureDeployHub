@@ -28,6 +28,7 @@ resource availabilitySet 'Microsoft.Compute/availabilitySets@2024-07-01' = {
   sku: {
     name: avSetSKU
   }
+  
 }
 
 @description('The resource ID of the deployed Availability Set.')

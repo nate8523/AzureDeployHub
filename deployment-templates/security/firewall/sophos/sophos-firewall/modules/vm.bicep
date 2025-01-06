@@ -64,23 +64,23 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2024-07-01' = {
     hardwareProfile: {
       vmSize: virtualMachineSize
     }
-    osProfile: {
-      computerName: virtualMachineName
-      adminUsername: adminUsername
-      adminPassword: adminPassword
+  osProfile: {
+    computerName: virtualMachineName
+    adminUsername: adminUsername
+    adminPassword: adminPassword
     }
-    diagnosticsProfile: {
-      bootDiagnostics: {
-        enabled: true
-        storageUri: storageUri
+  diagnosticsProfile: {
+    bootDiagnostics: {
+      enabled: true
+      storageUri: storageUri
       }
     }
-    storageProfile: {
-      imageReference: {
-        publisher: imagePublisher
-        offer: imageOffer
-        sku: imageSKU
-        version: imageVersion
+  storageProfile: {
+    imageReference: {
+      publisher: imagePublisher
+      offer: imageOffer
+      sku: imageSKU
+      version: imageVersion
       }
       osDisk: {
         createOption: 'FromImage'
@@ -99,20 +99,20 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2024-07-01' = {
           }
         }
       ]
-    }
+      }
     networkProfile: {
-      networkInterfaces: [
-        for nicId in networkInterfaceIds: {
+      networkInterfaces: [ for nicId in networkInterfaceIds: {
           id: nicId.id
           properties: {
             deleteOption: nicDeleteOption
             primary: nicId.primary
           }
-        }
-      ]
+        }]
     }
     availabilitySet: {
       id: availabilitySetId
     }
+    
+    
   }
 }

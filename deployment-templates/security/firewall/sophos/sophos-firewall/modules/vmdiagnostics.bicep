@@ -32,7 +32,7 @@ param storageAccountKind string
 ])
 param storageTLSversion string
 
-resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: storageAccountName
   location: location
   tags: tags
@@ -51,6 +51,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
     }
   }
 }
+
 
 @description('The primary Blob endpoint of the storage account.')
 output primaryBlobEndpoint string = storageAccount.properties.primaryEndpoints.blob

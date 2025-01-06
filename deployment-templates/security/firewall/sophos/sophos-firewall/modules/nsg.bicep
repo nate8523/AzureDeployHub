@@ -10,7 +10,7 @@ param tags object = {}
 @description('An array of security rules to configure in the Network Security Group.')
 param securityRules array = []
 
-resource nsg 'Microsoft.Network/networkSecurityGroups@2024-05-01' = {
+resource nsg 'Microsoft.Network/networkSecurityGroups@2020-11-01' = {
   name: toLower(nsgName)
   location: location
   tags: tags

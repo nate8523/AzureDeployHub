@@ -16,10 +16,10 @@ param location string
 @description('Tags to be applied to the virtual network.')
 param tags object = {}
 
-resource vnet 'Microsoft.Network/virtualNetworks@2024-05-01' = {
+resource vnet 'Microsoft.Network/virtualNetworks@2020-11-01' = {
   name: toLower(virtualNetworkName)
-  location: location
   tags: tags
+  location: location
   properties: {
     addressSpace: {
       addressPrefixes: [

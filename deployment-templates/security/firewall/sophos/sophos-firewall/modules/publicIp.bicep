@@ -15,10 +15,10 @@ param publicIpsku string
 @allowed(['Static', 'Dynamic'])
 param publicIPAllocationMethod string
 
-resource publicIp 'Microsoft.Network/publicIPAddresses@2024-05-01' = {
+resource publicIp 'Microsoft.Network/publicIPAddresses@2020-11-01' = {
   name: toLower(publicIpName)
-  location: location
   tags: tags
+  location: location
   sku: {
     name: publicIpsku
   }

@@ -22,26 +22,24 @@ param locationShort string
 @description('The resource ID of the Public IP Address.')
 param publicIpId string
 
-resource networkInterfaceArray 'Microsoft.Network/networkInterfaces@2024-05-01' = [
-  for (nic, i) in networkInterfaces: {
-    name: toLower('${deploymentPrefix}-nic-${deploymentType}-${locationShort}-${nic.networkInterfaceName}')
-    location: location
-    tags: tags
-    properties: {
-      ipConfigurations: [
-        {
-          name: 'ipConfig1'
-          properties: {
-            subnet: {
-              id: resourceId('Microsoft.Network/virtualNetworks/subnets', virtualNetworkName, nic.subnetName)
-            }
-            privateIPAllocationMethod: 'Dynamic'
-            publicIPAddress: toLower('${deploymentPrefix}-nic-${deploymentType}-${locationShort}-${nic.networkInterfaceName}') == toLower('${deploymentPrefix}-nic-${deploymentType}-${locationShort}-port-b') ? {
-              id: publicIpId
-            } : null
+resource networkInterfaceArray 'Microsoft.Network/networkInterfaces@2021-05-01' = [for (nic, i) in networkInterfaces: {
+  name: toLower('${deploymentPrefix}-nic-${deploymentType}-${locationShort}-${nic.networkInterfaceName}')
+  location: location
+  tags: tags
+  properties: {
+    ipConfigurations: [
+      {
+        name: 'ipConfig1'
+        properties: {
+          subnet: {
+            id: resourceId('Microsoft.Network/virtualNetworks/subnets', virtualNetworkName, nic.subnetName)
           }
+          privateIPAllocationMethod: 'Dynamic'
+          publicIPAddress: toLower('${deploymentPrefix}-nic-${deploymentType}-${locationShort}-${nic.networkInterfaceName}') == toLower('${deploymentPrefix}-nic-${deploymentType}-${locationShort}-port-b') ? {
+            id: publicIpId
+          } : null
         }
-      ]
-    }
+      }
+    ]
   }
-]
+}]
