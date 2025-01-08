@@ -6,7 +6,7 @@ param publicIpName string
 @description('The location of the Public IP Address.')
 param location string
 
-@description('Tags to be applied to the virtual network.')
+@description('Tags to be applied to the Public IP Address.')
 param tags object = {}
 
 @description('The SKU for the Public IP Address.')

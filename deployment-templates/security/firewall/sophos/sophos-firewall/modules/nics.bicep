@@ -15,12 +15,13 @@ param virtualNetworkName string
 @description('Deployment prefix for naming resources.')
 param deploymentPrefix string
 
-@description('Deployment type (e.g., dev, prod).')
+@description('Deployment type.')
 param deploymentType string
 
 @description('Short identifier for the location.')
 param locationShort string
 
+@description('The resource ID of the Public IP Address.')
 param publicIpId string
 
 resource networkInterfaceArray 'Microsoft.Network/networkInterfaces@2021-05-01' = [for (nic, i) in networkInterfaces: {

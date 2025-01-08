@@ -6,10 +6,10 @@ param nsgName string
 @description('The location of the Network Security Group.')
 param location string
 
-@description('Tags to be applied to the virtual network.')
+@description('Tags to be applied to the Network Security Group.')
 param tags object = {}
 
-@description('An array of security rules to configure in the NSG.')
+@description('An array of security rules to configure in the Network Security Group.')
 param securityRules array = []
 
 resource nsg 'Microsoft.Network/networkSecurityGroups@2020-11-01' = {

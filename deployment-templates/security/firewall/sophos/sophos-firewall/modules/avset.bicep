@@ -9,12 +9,14 @@ param tags object
 @description('The name of the Availability Set.')
 param availabilitySetName string
 
-@description('The number of fault domains.')
+@description('The number of fault domains for the Availability Set.')
 param faultDomains int
 
-@description('The number of update domains.')
+@description('The number of update domains for the Availability Set.')
 param updateDomains int
 
+@description('The SKU for the Availability Set.')
+@allowed(['Aligned', 'Classic'])
 param avSetSKU string
 
 resource availabilitySet 'Microsoft.Compute/availabilitySets@2024-07-01' = {

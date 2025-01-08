@@ -41,9 +41,7 @@
             ]
         },
         "DNSServerAddress": {
-            "value": [
-                
-            ]
+            "value": []
         },
         "securityRules": {
             "value": [
@@ -135,5 +133,3 @@
         }
     }
 }
-
-

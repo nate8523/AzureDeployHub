@@ -44,7 +44,10 @@ param networkInterfaceIds array
 @description('The resource ID of the Availability Set.')
 param availabilitySetId string
 
+@description('The name of the OS disk.')
 param osDiskName string
+
+@description('The name of the data disk.')
 param dataDiskName string
 
 resource virtualMachine 'Microsoft.Compute/virtualMachines@2024-07-01' = {
